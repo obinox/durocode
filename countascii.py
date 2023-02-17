@@ -11,15 +11,15 @@ print(ddict)
 
 dhex = [ord(x) for x in list(dl)]
 dhexgroup = [list(g) for _, g in groupby(dhex)]
-with open('durocode/duroasciicode.txt','w') as d:
+with open('durocode/durotxt/duroasciicode.txt','w') as d:
     d.write('\n'.join([f'{len(x)} {x[0]}' for x in dhexgroup]))
 
-with open('durocode/duroasciicode.txt', 'r') as d:
+with open('durocode/durotxt/duroasciicode.txt', 'r') as d:
     dlines = d.readlines()
 
-with open('durocode/counterr.txt', 'r') as c:
+with open('durocode/durotxt/counterr.txt', 'r') as c:
     cr = [r.replace("\n", "") for r in c.readlines()]
-with open('durocode/counterl.txt', 'r') as c:
+with open('durocode/durotxt/counterl.txt', 'r') as c:
     cl = [r.replace("\n", "") for r in c.readlines()]
 
 tex = [0, 0, 10, {42, 43, 44, 45}, 0, 0, {32, 33, 35, 36}, {58, 59}, 0, 0, {61, 64}, 126, 0, 0]
@@ -67,7 +67,7 @@ for i in range(len(k)):
     if lr == 0: cs += "<"*const + cr[n-1]
     elif lr == 1: cs += ">"*const + cl[n-1]
 
-with open('durocode/durobfcode.txt', 'w', encoding='utf-16be') as d:
+with open('durocode/durotxt/durobfcode.txt', 'w', encoding='utf-16be') as d:
     for i in range(2):
         cs = cs.replace("><", "")
         cs = cs.replace("<>", "")
